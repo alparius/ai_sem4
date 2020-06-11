@@ -1,0 +1,63 @@
+1. THE ALGORITHM AND THE CHOSEN MODEL:
+
+    We start by fuzzifying the two input float variables, the texture and the capacity.
+    We obtain the membership degree of our input variables with respect to the different regions of the fuzzy variable.
+    This is done using the trapezoidal region functions, which also work with triangle regions,
+    because those regions were also given as trapezoids with b=c.
+    Then we collect all evaluated rule-values into a list of tuples, and filter it, so we only keep the best value of each region.
+    Finally we calculate the weighted average of the middlepoints of the regions, with these biggest membership degrees as weights.
+
+    I choose the Mamdani model but I only calculate the area of the final model as a weighted average
+    of the membership degrees and the middlepoints of their respective regions.
+
+
+
+2. OTHER SPECIFIC INFO
+
+    2.1 THE PROBLEM - The washing machine
+
+        Design and implement a control module to adjust the washing cycle for a washing machine.
+        The wash cycle (delicate, easy, normal, intense) depends:
+            - on the texture of clothes (very soft, soft, normal, resistant) and
+            - on the amount of clothes loaded in the car (small, medium, high).
+
+
+    2.2 FUZZY REGIONS AND RULES
+
+        texture regions:
+            verysoft: (0.0, 0.0, 0.2, 0.4)
+            soft: (0.2, 0.4, 0.4, 0.8)
+            normal: (0.3, 0.7, 0.7, 0.9)
+            resistant: (0.7, 0.9, 1.0, 1.0)
+
+        capacity regions:
+            small: (0.0, 0.0, 1.0, 2.0)
+            medium: (1.0, 2.5, 2.5, 4.0)
+            high: (3.0, 4.0, 5.0, 5.0)
+
+        cycletype regions:
+            delicate: (0.0, 0.0, 0.2, 0.4)
+            easy: (0.2, 0.5, 0.5, 0.8)
+            normal: (0.3, 0.6, 0.6, 0.9)
+            intense: (0.7, 0.9, 1.0, 1.0)
+
+        fuzzy rules:
+            ('verysoft', 'small'): delicate
+            ('verysoft', 'medium'): easy
+            ('verysoft', 'high'): normal
+            ('soft', 'small'): easy
+            ('soft', 'medium'): normal
+            ('soft', 'high'): normal
+            ('normal', 'small'): easy
+            ('normal', 'medium'): normal
+            ('normal', 'high'): intense
+            ('resistant', 'small'): easy
+            ('resistant', 'medium'): normal
+            ('resistant', 'high'): intense
+
+
+
+3. VALIDATION
+
+    the validation for the results (for 2 inputs a CLEAR calculation for the result going through ALL the steps of the method)
+    on paper

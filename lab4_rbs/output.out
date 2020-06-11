@@ -1,0 +1,5 @@
+texture=0.2 and capacity=1.0 --> cycletype=0.20
+texture=0.85 and capacity=4.0 --> cycletype=0.85
+texture=0.8 and capacity=3.5 --> cycletype=0.75
+texture=0.4 and capacity=1.5 --> cycletype=0.54
+texture=0.35 and capacity=3.33 --> cycletype=0.60

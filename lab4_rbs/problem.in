@@ -1,0 +1,26 @@
+verysoft 0.0 0.0 0.2 0.4
+soft 0.2 0.4 0.4 0.8
+normal 0.3 0.7 0.7 0.9
+resistant 0.7 0.9 1.0 1.0
+
+small 0.0 0.0 1.0 2.0
+medium 1.0 2.5 2.5 4.0
+high 3.0 4.0 5.0 5.0
+
+delicate 0.0 0.0 0.2 0.4
+easy 0.2 0.5 0.5 0.8
+normal 0.3 0.6 0.6 0.9
+intense 0.7 0.9 1.0 1.0
+
+verysoft small delicate
+verysoft medium easy
+verysoft high normal
+soft small easy
+soft medium normal
+soft high normal
+normal small easy
+normal medium normal
+normal high intense
+resistant small easy
+resistant medium normal
+resistant high intense
